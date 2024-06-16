@@ -1,0 +1,17 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='shipOnDock-add-form' name='shipOnDock-add-form' class='form-horizontal' method="POST" action='')
+      input(id='id' type="hidden" name='id' value=shipOnDock.id class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='dock') Dock
+        div(class='col-md-9')
+          select(id='dock' name='dock' class='form-control')
+            option(value='') Select a dock
+            each dock in docks
+               option(value=dock.number)= `${dock.port} , ${dock.number}, ${dock.capacity}, ${dock.draft}`
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Update

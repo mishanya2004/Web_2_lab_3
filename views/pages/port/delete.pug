@@ -1,0 +1,11 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='port-add-form' name='port-delete-form' class='form-horizontal' method="POST" action='')
+      input(id='id' type="hidden" name='id' value=port.id class='form-control')
+      div(class='form-group')
+        div(class='col-md-12') #{port.code} #{port.name} #{port.country} #{port.address}
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Delete

@@ -1,0 +1,27 @@
+extends ../../layout
+
+block content
+  h3 Dock List
+
+  a(href='/dock/add' class="btn btn-default") Add
+
+  table(class="table")
+    thead
+      tr
+        th Port 
+        th Number
+        th Capacity
+        th The min draft of the ship
+    tbody
+      each dock in docks
+        tr
+          td #{dock.port}
+          td #{dock.number}
+          td #{dock.capacity}
+          td #{dock.draft}
+          td
+            form(action=`remove/${dock.id}`, method='get')
+              button(type='submit') Delete
+          td
+            form(action=`edit/${dock.id}`, method='get')
+              button(type='submit') Edit

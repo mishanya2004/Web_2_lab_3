@@ -1,0 +1,26 @@
+extends ../../layout
+
+block content
+  h3 Ship on Dock List
+
+  a(href='/shipOnDock/add' class="btn btn-default") Add
+
+  table(class="table")
+    thead
+      tr
+        th Ship
+        th Dock
+    tbody
+      each shipOnDock in shipOnDocks
+        tr
+          td #{shipOnDock.ship}
+          td #{shipOnDock.dock}
+          td
+            form(action=`remove/${shipOnDock.id}`, method='get')
+              button(type='submit') Delete
+          td
+            form(action=`toShip/${shipOnDock.id}`, method='get')
+              button(type='submit') Move Ship to another Dock 
+          td
+            form(action=`toDock/${shipOnDock.id}`, method='get')
+              button(type='submit') Move Dock to 

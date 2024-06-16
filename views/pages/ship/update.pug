@@ -1,0 +1,33 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='storage-add-form' name='storage-add-form' class='form-horizontal' method="POST" action='')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='name') Name 
+        div(class='col-md-9')
+          input(id='name' name='name' value=$fn.getPropOrDefault(newShip, 'name') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='number') Boarding number
+        div(class='col-md-9')
+          input(id='number' name='number' value=$fn.getPropOrDefault(newShip, 'number') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='country') Country
+        div(class='col-md-9')
+          input(id='country' name='country' value=$fn.getPropOrDefault(newShip, 'country') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='tonnage') Tonnage
+        div(class='col-md-9')
+          input(id='tonnage' name='tonnage' value=$fn.getPropOrDefault(newShip, 'tonnage') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='draft') Draft
+        div(class='col-md-9')
+          input(id='draft' name='draft' value=$fn.getPropOrDefault(newProduct, 'draft') class='form-control')
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Update

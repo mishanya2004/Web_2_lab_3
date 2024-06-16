@@ -1,0 +1,31 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='dock-add-form' name='dock-add-form' class='form-horizontal' method="POST" action='')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='port') Port 
+        div(class='col-md-9')
+          select(id='port' name='port' class='form-control')
+            option(value='') Select a port 
+            each port in ports
+              option(value=port.name)= `${port.code}, ${port.name} , ${port.country}, ${port.address}`
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='number') Number
+        div(class='col-md-9')
+          input(id='number' name='number' value=$fn.getPropOrDefault(newDock, 'number') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='capacity') Capacity
+        div(class='col-md-9')
+          input(id='capacity' name='capacity' value=$fn.getPropOrDefault(newDock, 'capacity') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='draft') The min draft of the ship
+        div(class='col-md-9')
+          input(id='draft' name='draft' value=$fn.getPropOrDefault(newDock, 'draft') class='form-control')
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Create

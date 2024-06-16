@@ -1,0 +1,18 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='shipOnDock-add-form' name='shipOnDock-add-form' class='form-horizontal' method="POST" action='')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='ship') Ship
+        div(class='col-md-9')
+          input(id='ship' name='ship' value=$fn.getPropOrDefault(newshipOnDock, 'ship') class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='dock') Dock
+        div(class='col-md-9')
+          input(id='dock' name='dock' value=$fn.getPropOrDefault(newshipOnDock , 'dock') class='form-control')
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Update

@@ -1,0 +1,27 @@
+extends ../../layout
+
+block content
+  h3 Port List
+
+  a(href='/port/add' class="btn btn-default") Add
+
+  table(class="table")
+    thead
+      tr
+        th EDRPOU Number
+        th Name
+        th Country
+        th Address 
+    tbody
+      each port in ports
+        tr
+          td #{port.code}
+          td #{port.name}
+          td #{port.country}
+          td #{port.address}
+          td
+            form(action=`remove/${port.id}`, method='get')
+              button(type='submit') Delete
+          td
+            form(action=`edit/${port.id}`, method='get')
+              button(type='submit') Edit

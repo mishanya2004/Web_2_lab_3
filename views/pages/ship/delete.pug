@@ -1,0 +1,11 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='ship-add-form' name='ship-delete-form' class='form-horizontal' method="POST" action='')
+      input(id='id' type="hidden" name='id' value=ship.id class='form-control')
+      div(class='form-group')
+        div(class='col-md-12') #{ship.name} #{ship.number} #{ship.country} #{ship.tonnage} #{ship.draft}
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Delete
